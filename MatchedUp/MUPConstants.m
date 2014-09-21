@@ -12,13 +12,15 @@
 
 #pragma mark - User Profile
 
+NSString *const kMUPUserTagLineKey              = @"tagLine"; // NOT Profile
+
 NSString *const kMUPUserProfileKey              = @"profile";
 NSString *const kMUPUserProfileNameKey          = @"name";
-NSString *const kMUPUserProfileFirstNameKey     = @"first_name";
+NSString *const kMUPUserProfileFirstNameKey     = @"firstName";
 NSString *const kMUPUserProfileLocationKey      = @"location";
 NSString *const kMUPUserProfileGenderKey        = @"gender";
 NSString *const kMUPUserProfileBirthdayKey      = @"birthday";
-NSString *const kMUPUserProfileInterestedInKey  = @"interested_in";
+NSString *const kMUPUserProfileInterestedInKey  = @"interestedIn";
 NSString *const kMUPUserProfilePictureURL       = @"pictureURL";
 NSString *const kMUPUserProfileAgeKey           = @"age";
 NSString *const kMUPUserProfileRelationshipStatusKey = @"relationshipStatus";
@@ -28,5 +30,15 @@ NSString *const kMUPUserProfileRelationshipStatusKey = @"relationshipStatus";
 NSString *const kMUPPhotoClassKey               = @"Photo";
 NSString *const kMUPPhotoUserKey                = @"user";
 NSString *const kMUPPhotoPictureKey             = @"image";
+
+#pragma mark - Acitivty Class
+
+NSString *const kMUPActivityClassKey            = @"Activity";
+NSString *const kMUPActivityTypeKey             = @"type";
+NSString *const kMUPActivityFromUserKey         = @"fromUser";
+NSString *const kMUPActivityToUserKey           = @"toUser";
+NSString *const kMUPActivityPhotoKey            = @"photo";
+NSString *const kMUPActivityTypeLikeKey         = @"like";
+NSString *const kMUPActivityTypeDislikeKey      = @"dislike";
 
 @end
