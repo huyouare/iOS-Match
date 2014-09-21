@@ -22,6 +22,10 @@
 		83AA906E19C658FC007278D5 /* MatchedUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA906D19C658FC007278D5 /* MatchedUpTests.m */; };
 		83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA907819C65921007278D5 /* MUPLoginViewController.m */; };
 		83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258019CE50DB00E56A2E /* MUPConstants.m */; };
+		83DA258519CF6C8A00E56A2E /* MUPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258419CF6C8A00E56A2E /* MUPHomeViewController.m */; };
+		83DA258A19CF700400E56A2E /* MUPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258919CF700400E56A2E /* MUPSettingsViewController.m */; };
+		83DA258F19CF728700E56A2E /* MUPEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258E19CF728700E56A2E /* MUPEditProfileViewController.m */; };
+		83DA259319CF747900E56A2E /* MUPProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA259219CF747900E56A2E /* MUPProfileViewController.m */; };
 		F989CF81B3BD40EA982CA66E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BD705714E04C26AA11F3A8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,14 @@
 		83AA907819C65921007278D5 /* MUPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPLoginViewController.m; sourceTree = "<group>"; };
 		83DA257F19CE50DB00E56A2E /* MUPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPConstants.h; sourceTree = "<group>"; };
 		83DA258019CE50DB00E56A2E /* MUPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPConstants.m; sourceTree = "<group>"; };
+		83DA258319CF6C8A00E56A2E /* MUPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPHomeViewController.h; sourceTree = "<group>"; };
+		83DA258419CF6C8A00E56A2E /* MUPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPHomeViewController.m; sourceTree = "<group>"; };
+		83DA258819CF700400E56A2E /* MUPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPSettingsViewController.h; sourceTree = "<group>"; };
+		83DA258919CF700400E56A2E /* MUPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPSettingsViewController.m; sourceTree = "<group>"; };
+		83DA258D19CF728700E56A2E /* MUPEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPEditProfileViewController.h; sourceTree = "<group>"; };
+		83DA258E19CF728700E56A2E /* MUPEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPEditProfileViewController.m; sourceTree = "<group>"; };
+		83DA259119CF747900E56A2E /* MUPProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPProfileViewController.h; sourceTree = "<group>"; };
+		83DA259219CF747900E56A2E /* MUPProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPProfileViewController.m; sourceTree = "<group>"; };
 		96BD705714E04C26AA11F3A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +136,10 @@
 				83AA904E19C658FC007278D5 /* MUPAppDelegate.h */,
 				83AA904F19C658FC007278D5 /* MUPAppDelegate.m */,
 				83AA905119C658FC007278D5 /* Main.storyboard */,
+				83DA258219CF6C5900E56A2E /* Home */,
+				83DA258719CF6FE900E56A2E /* Settings */,
+				83DA258C19CF726300E56A2E /* EditProfile */,
+				83DA259019CF745C00E56A2E /* Profile */,
 				83AA907B19C6593E007278D5 /* Login */,
 				83AA905A19C658FC007278D5 /* Images.xcassets */,
 				83AA904619C658FC007278D5 /* Supporting Files */,
@@ -169,6 +185,42 @@
 				83AA907819C65921007278D5 /* MUPLoginViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		83DA258219CF6C5900E56A2E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				83DA258319CF6C8A00E56A2E /* MUPHomeViewController.h */,
+				83DA258419CF6C8A00E56A2E /* MUPHomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		83DA258719CF6FE900E56A2E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				83DA258819CF700400E56A2E /* MUPSettingsViewController.h */,
+				83DA258919CF700400E56A2E /* MUPSettingsViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		83DA258C19CF726300E56A2E /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				83DA258D19CF728700E56A2E /* MUPEditProfileViewController.h */,
+				83DA258E19CF728700E56A2E /* MUPEditProfileViewController.m */,
+			);
+			name = EditProfile;
+			sourceTree = "<group>";
+		};
+		83DA259019CF745C00E56A2E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				83DA259119CF747900E56A2E /* MUPProfileViewController.h */,
+				83DA259219CF747900E56A2E /* MUPProfileViewController.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,10 +357,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DA258519CF6C8A00E56A2E /* MUPHomeViewController.m in Sources */,
+				83DA258F19CF728700E56A2E /* MUPEditProfileViewController.m in Sources */,
 				83AA904C19C658FC007278D5 /* main.m in Sources */,
 				83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */,
 				83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */,
+				83DA258A19CF700400E56A2E /* MUPSettingsViewController.m in Sources */,
 				83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */,
+				83DA259319CF747900E56A2E /* MUPProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,6 +20,8 @@ extern NSString *const kMUPUserProfileGenderKey;
 extern NSString *const kMUPUserProfileBirthdayKey;
 extern NSString *const kMUPUserProfileInterestedInKey;
 extern NSString *const kMUPUserProfilePictureURL;
+extern NSString *const kMUPUserProfileRelationshipStatusKey;
+extern NSString *const kMUPUserProfileAgeKey;
 
 #pragma mark - Photo Class
 
