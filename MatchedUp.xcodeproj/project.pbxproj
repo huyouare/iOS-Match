@@ -23,6 +23,7 @@
 		83AA906C19C658FC007278D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83AA906A19C658FC007278D5 /* InfoPlist.strings */; };
 		83AA906E19C658FC007278D5 /* MatchedUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA906D19C658FC007278D5 /* MatchedUpTests.m */; };
 		83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA907819C65921007278D5 /* MUPLoginViewController.m */; };
+		83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258019CE50DB00E56A2E /* MUPConstants.m */; };
 		F989CF81B3BD40EA982CA66E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BD705714E04C26AA11F3A8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		83AA906D19C658FC007278D5 /* MatchedUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchedUpTests.m; sourceTree = "<group>"; };
 		83AA907719C65921007278D5 /* MUPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPLoginViewController.h; sourceTree = "<group>"; };
 		83AA907819C65921007278D5 /* MUPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPLoginViewController.m; sourceTree = "<group>"; };
+		83DA257F19CE50DB00E56A2E /* MUPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPConstants.h; sourceTree = "<group>"; };
+		83DA258019CE50DB00E56A2E /* MUPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPConstants.m; sourceTree = "<group>"; };
 		96BD705714E04C26AA11F3A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +144,8 @@
 		83AA904619C658FC007278D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83DA257F19CE50DB00E56A2E /* MUPConstants.h */,
+				83DA258019CE50DB00E56A2E /* MUPConstants.m */,
 				83AA904719C658FC007278D5 /* MatchedUp-Info.plist */,
 				83AA904819C658FC007278D5 /* InfoPlist.strings */,
 				83AA904B19C658FC007278D5 /* main.m */,
@@ -312,6 +317,7 @@
 			files = (
 				83AA904C19C658FC007278D5 /* main.m in Sources */,
 				83AA905919C658FC007278D5 /* MUPSecondViewController.m in Sources */,
+				83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */,
 				83AA905619C658FC007278D5 /* MUPFirstViewController.m in Sources */,
 				83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */,
 				83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */,

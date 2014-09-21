@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MUPLoginViewController : UIViewController
+@interface MUPLoginViewController : UIViewController <NSURLConnectionDataDelegate>
 
 @end
