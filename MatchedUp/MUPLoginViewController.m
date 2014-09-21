@@ -92,6 +92,7 @@
 
 - (void)updateUserInformation
 {
+    NSLog(@"Updaing user information.");
     FBRequest *request = [FBRequest requestForMe];
     
     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -123,9 +124,10 @@
                 [formatter setDateStyle:NSDateFormatterShortStyle];
                 NSDate *date = [formatter dateFromString:userDictionary[@"birthday"]];
                 NSDate *now = [NSDate date];
-  
+                
                 NSTimeInterval seconds = [now timeIntervalSinceDate:date];
-                int age = seconds / 3153600;
+                int age = seconds / 31536000;
+                NSLog(@"Age: %i", age);
                 userProfile[kMUPUserProfileAgeKey] = @(age);
             }
             if (userDictionary[@"interested_in"]) {
