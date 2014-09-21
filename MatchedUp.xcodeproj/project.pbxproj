@@ -14,8 +14,6 @@
 		83AA904C19C658FC007278D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA904B19C658FC007278D5 /* main.m */; };
 		83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA904F19C658FC007278D5 /* MUPAppDelegate.m */; };
 		83AA905319C658FC007278D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AA905119C658FC007278D5 /* Main.storyboard */; };
-		83AA905619C658FC007278D5 /* MUPFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA905519C658FC007278D5 /* MUPFirstViewController.m */; };
-		83AA905919C658FC007278D5 /* MUPSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA905819C658FC007278D5 /* MUPSecondViewController.m */; };
 		83AA905B19C658FC007278D5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AA905A19C658FC007278D5 /* Images.xcassets */; };
 		83AA906219C658FC007278D5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA906119C658FC007278D5 /* XCTest.framework */; };
 		83AA906319C658FC007278D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA903F19C658FC007278D5 /* Foundation.framework */; };
@@ -50,10 +48,6 @@
 		83AA904E19C658FC007278D5 /* MUPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPAppDelegate.h; sourceTree = "<group>"; };
 		83AA904F19C658FC007278D5 /* MUPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPAppDelegate.m; sourceTree = "<group>"; };
 		83AA905219C658FC007278D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		83AA905419C658FC007278D5 /* MUPFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPFirstViewController.h; sourceTree = "<group>"; };
-		83AA905519C658FC007278D5 /* MUPFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPFirstViewController.m; sourceTree = "<group>"; };
-		83AA905719C658FC007278D5 /* MUPSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUPSecondViewController.h; sourceTree = "<group>"; };
-		83AA905819C658FC007278D5 /* MUPSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUPSecondViewController.m; sourceTree = "<group>"; };
 		83AA905A19C658FC007278D5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		83AA906019C658FC007278D5 /* MatchedUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AA906119C658FC007278D5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,10 +125,6 @@
 				83AA904F19C658FC007278D5 /* MUPAppDelegate.m */,
 				83AA905119C658FC007278D5 /* Main.storyboard */,
 				83AA907B19C6593E007278D5 /* Login */,
-				83AA905419C658FC007278D5 /* MUPFirstViewController.h */,
-				83AA905519C658FC007278D5 /* MUPFirstViewController.m */,
-				83AA905719C658FC007278D5 /* MUPSecondViewController.h */,
-				83AA905819C658FC007278D5 /* MUPSecondViewController.m */,
 				83AA905A19C658FC007278D5 /* Images.xcassets */,
 				83AA904619C658FC007278D5 /* Supporting Files */,
 			);
@@ -316,9 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AA904C19C658FC007278D5 /* main.m in Sources */,
-				83AA905919C658FC007278D5 /* MUPSecondViewController.m in Sources */,
 				83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */,
-				83AA905619C658FC007278D5 /* MUPFirstViewController.m in Sources */,
 				83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */,
 				83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */,
 			);

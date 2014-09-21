@@ -153,8 +153,8 @@
         if (succeeded) {
             NSLog(@"Success.");
             PFObject *photo = [PFObject objectWithClassName:kMUPPhotoClassKey];
-            [photo setObject:[PFUser currentUser] forKey:KMUPPhotoUserKey];
-            [photo setObject:photoFile forKey:KMUPPhotoPictureKey];
+            [photo setObject:[PFUser currentUser] forKey:kMUPPhotoUserKey];
+            [photo setObject:photoFile forKey:kMUPPhotoPictureKey];
             [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"Photo saved successfully.");
             }];
@@ -168,7 +168,7 @@
 - (void)requestImage
 {
     PFQuery *query = [PFQuery queryWithClassName:kMUPPhotoClassKey];
-    [query whereKey:KMUPPhotoUserKey equalTo:[PFUser currentUser]];
+    [query whereKey:kMUPPhotoUserKey equalTo:[PFUser currentUser]];
     
     [query countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         NSLog(@"Number of photos: %i", number);
