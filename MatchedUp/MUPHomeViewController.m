@@ -47,8 +47,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.likeButton.enabled = NO;
-    self.dislikeButton.enabled = NO;
+//    self.likeButton.enabled = NO;
+//    self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
     
     self.currentPhotoIndex = 0;
@@ -89,10 +89,12 @@
 #pragma mark - IBActions
 - (IBAction)likeButtonPressed:(UIButton *)sender
 {
+    [self checkLike];
 }
 
 - (IBAction)dislikeButtonPressed:(UIButton *)sender
 {
+    [self checkDislike];
 }
 
 - (IBAction)infoButtonPressed:(UIButton *)sender
@@ -123,6 +125,38 @@
             }
         }];
     }
+    
+    PFQuery *queryForLike = [PFQuery queryWithClassName:@"Activity"];
+    [queryForLike whereKey:@"type" equalTo:@"like"];
+    [queryForLike whereKey:@"photo" equalTo:self.photo];
+    [queryForLike whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
+    
+    PFQuery *queryForDislike = [PFQuery queryWithClassName:@"Activity"];
+    [queryForDislike whereKey:@"type" equalTo:@"dislike"];
+    [queryForDislike whereKey:@"photo" equalTo:self.photo];
+    [queryForDislike whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
+    PFQuery *likeOrDislikeQuery = [PFQuery orQueryWithSubqueries:@[queryForLike, queryForDislike]];
+    [likeOrDislikeQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.activities = [objects mutableCopy];
+            
+            if ([self.activities count] == 0) {
+                self.isLikedByCurrentUser = NO;
+                self.isDislikedByCurrentUser = NO;
+            } else {
+                PFObject *activity = self.activities[0]; // Only one actiivty allowed
+                if ([activity[@"type"] isEqualToString:@"like"]) {
+                    self.isLikedByCurrentUser = YES;
+                    self.isDislikedByCurrentUser = NO;
+                } else if ([activity[@"type"] isEqualToString:@"dislike"]) {
+                    self.isLikedByCurrentUser = NO;
+                    self.isDislikedByCurrentUser = YES;
+                }
+            }
+        }
+    }];
 }
 
 - (void)updateView
