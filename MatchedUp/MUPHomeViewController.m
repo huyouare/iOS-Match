@@ -7,6 +7,7 @@
 //
 
 #import "MUPHomeViewController.h"
+#import "MUPTestUser.h"
 
 @interface MUPHomeViewController ()
 
@@ -47,6 +48,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // [MUPTestUser saveTestUserToParse];
+    
 //    self.likeButton.enabled = NO;
 //    self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
@@ -54,6 +57,7 @@
     self.currentPhotoIndex = 0;
     
     PFQuery *query = [PFQuery queryWithClassName:kMUPPhotoClassKey];
+    [query whereKey:kMUPPhotoUserKey notEqualTo:[PFUser currentUser]];
     [query includeKey:kMUPPhotoUserKey];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

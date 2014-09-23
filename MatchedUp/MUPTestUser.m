@@ -26,6 +26,29 @@
                                       @"name": @"Julie Adams"};
             [newUser setObject:profile forKey:@"profile"];
             
+            [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                UIImage *profileImage = [UIImage imageNamed:@"ProfileImage1.jpg"];
+                NSData *imageData = UIImageJPEGRepresentation(profileImage, 0.8);
+                PFFile *photoFile = [PFFile fileWithData:imageData];
+                
+                [photoFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        PFObject *photo = [PFObject objectWithClassName:kMUPPhotoClassKey];
+                        [photo setObject:newUser forKey:kMUPPhotoUserKey];
+                        [photo setObject:photoFile forKey:kMUPPhotoPictureKey];
+                        [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if (succeeded) {
+                                NSLog(@"Photo saved successfully.");
+                            } else {
+                                NSLog(@"%@", error);
+                            }
+                        }];
+                    }
+                }];
+            }];
+            
+            
+            
         }
     }];
 }

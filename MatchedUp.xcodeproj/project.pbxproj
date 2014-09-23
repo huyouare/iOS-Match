@@ -21,6 +21,7 @@
 		83AA906C19C658FC007278D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83AA906A19C658FC007278D5 /* InfoPlist.strings */; };
 		83AA906E19C658FC007278D5 /* MatchedUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA906D19C658FC007278D5 /* MatchedUpTests.m */; };
 		83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AA907819C65921007278D5 /* MUPLoginViewController.m */; };
+		83B70AB319D1FBFC0082BD7F /* ProfileImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83B70AB219D1FBFC0082BD7F /* ProfileImage1.jpg */; };
 		83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258019CE50DB00E56A2E /* MUPConstants.m */; };
 		83DA258519CF6C8A00E56A2E /* MUPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258419CF6C8A00E56A2E /* MUPHomeViewController.m */; };
 		83DA258A19CF700400E56A2E /* MUPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA258919CF700400E56A2E /* MUPSettingsViewController.m */; };
@@ -61,6 +62,7 @@
 		83AA906D19C658FC007278D5 /* MatchedUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchedUpTests.m; sourceTree = "<group>"; };
 		83AA907719C65921007278D5 /* MUPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPLoginViewController.h; sourceTree = "<group>"; };
 		83AA907819C65921007278D5 /* MUPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPLoginViewController.m; sourceTree = "<group>"; };
+		83B70AB219D1FBFC0082BD7F /* ProfileImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ProfileImage1.jpg; sourceTree = "<group>"; };
 		83DA257F19CE50DB00E56A2E /* MUPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPConstants.h; sourceTree = "<group>"; };
 		83DA258019CE50DB00E56A2E /* MUPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPConstants.m; sourceTree = "<group>"; };
 		83DA258319CF6C8A00E56A2E /* MUPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPHomeViewController.h; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		83AA904619C658FC007278D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83B70AB219D1FBFC0082BD7F /* ProfileImage1.jpg */,
 				83DA257F19CE50DB00E56A2E /* MUPConstants.h */,
 				83DA258019CE50DB00E56A2E /* MUPConstants.m */,
 				83AA904719C658FC007278D5 /* MatchedUp-Info.plist */,
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AA905B19C658FC007278D5 /* Images.xcassets in Resources */,
+				83B70AB319D1FBFC0082BD7F /* ProfileImage1.jpg in Resources */,
 				83AA904A19C658FC007278D5 /* InfoPlist.strings in Resources */,
 				83AA905319C658FC007278D5 /* Main.storyboard in Resources */,
 			);
