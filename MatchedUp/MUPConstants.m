@@ -41,4 +41,12 @@ NSString *const kMUPActivityPhotoKey            = @"photo";
 NSString *const kMUPActivityTypeLikeKey         = @"like";
 NSString *const kMUPActivityTypeDislikeKey      = @"dislike";
 
+#pragma mark - Settings
+
+NSString *const kMUPMenEnabledKey               = @"men";
+NSString *const kMUPWomenEnabledKey             = @"women";
+NSString *const kMUPSingleEnabledKey           = @"single";
+NSString *const kMUPAgeMaxKey                   = @"ageMax";
+
+
 @end

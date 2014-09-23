@@ -8,6 +8,7 @@
 
 #import "MUPHomeViewController.h"
 #import "MUPTestUser.h"
+#import "MUPProfileViewController.h"
 
 @interface MUPHomeViewController ()
 
@@ -50,8 +51,8 @@
     
     // [MUPTestUser saveTestUserToParse];
     
-//    self.likeButton.enabled = NO;
-//    self.dislikeButton.enabled = NO;
+    self.likeButton.enabled = NO;
+    self.dislikeButton.enabled = NO;
     self.infoButton.enabled = NO;
     
     self.currentPhotoIndex = 0;
@@ -78,16 +79,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
+        MUPProfileViewController *profileVC = segue.destinationViewController;
+        profileVC.photo = self.photo;
+    }
 }
-*/
 
 
 #pragma mark - IBActions
@@ -103,6 +104,7 @@
 
 - (IBAction)infoButtonPressed:(UIButton *)sender
 {
+    [self performSegueWithIdentifier:@"homeToProfileSegue" sender:nil];
 }
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender
@@ -165,6 +167,7 @@
             
             self.likeButton.enabled = YES;
             self.dislikeButton.enabled = YES;
+            self.infoButton.enabled = YES;
         }
     }];
 }
