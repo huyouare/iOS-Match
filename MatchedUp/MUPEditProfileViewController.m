@@ -31,6 +31,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    PFQuery *query = [PFQuery queryWithClassName:kMUPPhotoClassKey];
+    [query whereKey:kMUPPhotoUserKey equalTo:[PFUser currentUser]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count > 0) {
+            PFObject *photo = objects[0];
+            PFFile *pictureFile = photo[kMUPPhotoPictureKey];
+            [pictureFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                self.profilePictureImageView.image = [UIImage imageWithData:data];
+            }];
+        }
+    }];
+    self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kMUPUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +68,11 @@
 
 - (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender
 {
+    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMUPUserTagLineKey];
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Tag Line Saved.");
+    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

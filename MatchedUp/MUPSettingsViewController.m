@@ -70,6 +70,8 @@
 #pragma mark - IBActions
 
 - (IBAction)logoutButtonPressed:(UIButton *)sender {
+    [PFUser logOut];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)editProfileButtonPressed:(UIButton *)sender {
