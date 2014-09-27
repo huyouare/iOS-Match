@@ -142,11 +142,73 @@
                         <outlet property="settingsBarButtonItem" destination="8fi-Oc-HgL" id="CcS-Ry-i5Z"/>
                         <outlet property="tagLineLabel" destination="rCE-mq-Dkt" id="h0m-YU-lcP"/>
                         <segue destination="ehP-7i-Em0" kind="push" identifier="homeToProfileSegue" id="1UF-eG-kd5"/>
+                        <segue destination="8iC-CP-2KX" kind="modal" identifier="homeToMatchSeque" id="bD0-bI-K8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ON-Uw-STP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="180"/>
+        </scene>
+        <!--Match View Controller-->
+        <scene sceneID="BzP-JR-E1P">
+            <objects>
+                <viewController id="8iC-CP-2KX" customClass="MUPMatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fnQ-xp-0K3"/>
+                        <viewControllerLayoutGuide type="bottom" id="UeL-Jy-uaQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dQg-mC-uh6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNs-ql-WXg">
+                                <rect key="frame" x="20" y="44" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-Kw-rH9">
+                                <rect key="frame" x="170" y="44" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's a Match!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlV-kI-iFP">
+                                <rect key="frame" x="113" y="221" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCx-hf-jrW">
+                                <rect key="frame" x="20" y="302" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Chats">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewChatsButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="szi-76-0ei"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D29-qq-WVy">
+                                <rect key="frame" x="191" y="302" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Keep Searching">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="keepSearchingButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="rcs-pS-yeW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DRE-lx-drE"/>
+                    <connections>
+                        <outlet property="currentUserImageView" destination="7H8-Kw-rH9" id="YKc-pu-wz6"/>
+                        <outlet property="keepSearchingButton" destination="D29-qq-WVy" id="Eqw-rm-n83"/>
+                        <outlet property="matchedUserImageView" destination="eNs-ql-WXg" id="80p-lr-ZFF"/>
+                        <outlet property="viewChatsButton" destination="zCx-hf-jrW" id="tiC-0G-LeR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBx-fN-5bQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="940"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="bCj-4g-rEz">
