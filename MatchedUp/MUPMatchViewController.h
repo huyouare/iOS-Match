@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MUPMatchViewControllerDelegate <NSObject>
+
+- (void)presentMatchesViewController;
+
+@end
+
 @interface MUPMatchViewController : UIViewController
+
+@property (strong, nonatomic) UIImage *matchedUserImage;
+@property (weak) id <MUPMatchViewControllerDelegate> delegate;
 
 @end

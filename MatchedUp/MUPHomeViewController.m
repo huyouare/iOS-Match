@@ -9,8 +9,9 @@
 #import "MUPHomeViewController.h"
 #import "MUPTestUser.h"
 #import "MUPProfileViewController.h"
+#import "MUPMatchViewController.h"
 
-@interface MUPHomeViewController ()
+@interface MUPHomeViewController () <MUPMatchViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -87,6 +88,10 @@
     if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
         MUPProfileViewController *profileVC = segue.destinationViewController;
         profileVC.photo = self.photo;
+    } else if ([segue.identifier isEqualToString:@"homeToMatchSegue"]) {
+        MUPMatchViewController *matchVC = segue.destinationViewController;
+        matchVC.matchedUserImage = self.photoImageView.image;
+        matchVC.delegate = self;
     }
 }
 
@@ -202,6 +207,8 @@
         self.isLikedByCurrentUser = YES;
         self.isDislikedByCurrentUser = NO;
         [self.activities addObject:likeActivity];
+        
+        [self checkForPhotoUserLikes];
         [self setupNextPhoto];
     }];
 }
@@ -252,6 +259,54 @@
     } else {
         [self saveDislike];
     }
+}
+
+- (void)checkForPhotoUserLikes
+{
+    PFQuery *query = [PFQuery queryWithClassName:kMUPActivityClassKey];
+
+    [query whereKey:kMUPActivityFromUserKey equalTo:self.photo[kMUPPhotoUserKey]];
+    [query whereKey:kMUPActivityToUserKey equalTo:[PFUser currentUser]];
+    [query whereKey:kMUPActivityTypeKey equalTo:kMUPActivityTypeLikeKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] > 0) {
+            [self createChatRoom];
+        }
+    }];
+}
+
+- (void)createChatRoom
+{
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:@"user2" equalTo:self.photo[kMUPPhotoUserKey]];
+    
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoomInverse whereKey:@"user1" equalTo:self.photo[kMUPPhotoUserKey]];
+    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    
+    PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
+    
+    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
+            [chatRoom setObject:[PFUser currentUser] forKey:@"user1"];
+            [chatRoom setObject:self.photo[kMUPPhotoUserKey] forKey:@"user2"];
+            [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+            }];
+        }
+    }];
+                              
+}
+
+#pragma mark - MUPMatchViewControllerDelegate
+
+- (void)presentMatchesViewController
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
+    }];
 }
 
 @end

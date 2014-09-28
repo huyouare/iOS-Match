@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8380A53F19D6841600E1FEDA /* MUPMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */; };
+		8380A54319D685A500E1FEDA /* MUPMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */; };
+		8380A54719D6878E00E1FEDA /* MUPChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A54619D6878D00E1FEDA /* MUPChatViewController.m */; };
 		83AA904019C658FC007278D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA903F19C658FC007278D5 /* Foundation.framework */; };
 		83AA904219C658FC007278D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA904119C658FC007278D5 /* CoreGraphics.framework */; };
 		83AA904419C658FC007278D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AA904319C658FC007278D5 /* UIKit.framework */; };
@@ -46,6 +48,10 @@
 		669FEF7F21E7402B9749E8A6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8380A53D19D6841600E1FEDA /* MUPMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPMatchViewController.h; sourceTree = "<group>"; };
 		8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPMatchViewController.m; sourceTree = "<group>"; };
+		8380A54119D685A500E1FEDA /* MUPMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPMatchesViewController.h; sourceTree = "<group>"; };
+		8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPMatchesViewController.m; sourceTree = "<group>"; };
+		8380A54519D6878D00E1FEDA /* MUPChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPChatViewController.h; sourceTree = "<group>"; };
+		8380A54619D6878D00E1FEDA /* MUPChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPChatViewController.m; sourceTree = "<group>"; };
 		83AA903C19C658FC007278D5 /* MatchedUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchedUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AA903F19C658FC007278D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		83AA904119C658FC007278D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +121,24 @@
 			name = Match;
 			sourceTree = "<group>";
 		};
+		8380A54019D6859200E1FEDA /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				8380A54119D685A500E1FEDA /* MUPMatchesViewController.h */,
+				8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */,
+			);
+			name = Matches;
+			sourceTree = "<group>";
+		};
+		8380A54419D6860200E1FEDA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				8380A54519D6878D00E1FEDA /* MUPChatViewController.h */,
+				8380A54619D6878D00E1FEDA /* MUPChatViewController.m */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		83AA903319C658FC007278D5 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +183,8 @@
 				83DA259019CF745C00E56A2E /* Profile */,
 				83AA907B19C6593E007278D5 /* Login */,
 				8380A53C19D683EC00E1FEDA /* Match */,
+				8380A54019D6859200E1FEDA /* Matches */,
+				8380A54419D6860200E1FEDA /* Chat */,
 				83AA905A19C658FC007278D5 /* Images.xcassets */,
 				83DA259419CF961000E56A2E /* CreateParseUser */,
 				83AA904619C658FC007278D5 /* Supporting Files */,
@@ -394,9 +420,11 @@
 				83DA259719CF963600E56A2E /* MUPTestUser.m in Sources */,
 				8380A53F19D6841600E1FEDA /* MUPMatchViewController.m in Sources */,
 				83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */,
+				8380A54319D685A500E1FEDA /* MUPMatchesViewController.m in Sources */,
 				83DA258A19CF700400E56A2E /* MUPSettingsViewController.m in Sources */,
 				83AA907919C65921007278D5 /* MUPLoginViewController.m in Sources */,
 				83DA259319CF747900E56A2E /* MUPProfileViewController.m in Sources */,
+				8380A54719D6878E00E1FEDA /* MUPChatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
