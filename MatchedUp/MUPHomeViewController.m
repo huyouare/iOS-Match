@@ -114,6 +114,7 @@
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender
 {
+    [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
 }
 
 - (IBAction)settingsBarButtonItemPressed:(UIBarButtonItem *)sender
@@ -197,6 +198,7 @@
 
 - (void)saveLike
 {
+    NSLog(@"Saving Like");
     PFObject *likeActivity = [PFObject objectWithClassName:kMUPActivityClassKey];
     [likeActivity setObject:kMUPActivityTypeLikeKey forKey:kMUPActivityTypeKey];
     [likeActivity setObject:[PFUser currentUser] forKey:kMUPActivityFromUserKey];
@@ -263,6 +265,7 @@
 
 - (void)checkForPhotoUserLikes
 {
+    NSLog(@"Checking for photo user likes");
     PFQuery *query = [PFQuery queryWithClassName:kMUPActivityClassKey];
 
     [query whereKey:kMUPActivityFromUserKey equalTo:self.photo[kMUPPhotoUserKey]];
@@ -277,6 +280,7 @@
 
 - (void)createChatRoom
 {
+    NSLog(@"Chat Room Created!");
     PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
     [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
     [queryForChatRoom whereKey:@"user2" equalTo:self.photo[kMUPPhotoUserKey]];
@@ -293,8 +297,11 @@
             [chatRoom setObject:[PFUser currentUser] forKey:@"user1"];
             [chatRoom setObject:self.photo[kMUPPhotoUserKey] forKey:@"user2"];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"Segue to Match");
                 [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
             }];
+        } else {
+            NSLog(@"Chat failed.");
         }
     }];
                               

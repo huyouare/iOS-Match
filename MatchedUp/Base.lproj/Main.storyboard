@@ -142,8 +142,8 @@
                         <outlet property="settingsBarButtonItem" destination="8fi-Oc-HgL" id="CcS-Ry-i5Z"/>
                         <outlet property="tagLineLabel" destination="rCE-mq-Dkt" id="h0m-YU-lcP"/>
                         <segue destination="ehP-7i-Em0" kind="push" identifier="homeToProfileSegue" id="1UF-eG-kd5"/>
-                        <segue destination="8iC-CP-2KX" kind="modal" identifier="homeToMatchSeque" id="bD0-bI-K8U"/>
                         <segue destination="nDd-43-qNN" kind="push" identifier="homeToMatchesSegue" id="VA8-iZ-k1W"/>
+                        <segue destination="8iC-CP-2KX" kind="modal" identifier="homeToMatchSegue" id="sPD-Yd-pK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ON-Uw-STP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,7 +408,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="TTw-eU-41t" detailTextLabel="5oh-bR-0n7" style="IBUITableViewCellStyleSubtitle" id="z6l-BL-cgP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="TTw-eU-41t" detailTextLabel="5oh-bR-0n7" style="IBUITableViewCellStyleSubtitle" id="z6l-BL-cgP">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z6l-BL-cgP" id="j94-Ip-n6O">
@@ -447,10 +447,10 @@
             </objects>
             <point key="canvasLocation" x="1160" y="940"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="VH5-et-2HR">
             <objects>
-                <viewController id="J75-Jx-nxJ" sceneMemberID="viewController">
+                <viewController id="J75-Jx-nxJ" customClass="MUPChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ihr-FZ-Hjh"/>
                         <viewControllerLayoutGuide type="bottom" id="hvY-xN-pt5"/>

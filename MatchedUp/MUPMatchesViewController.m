@@ -123,7 +123,7 @@
     
     cell.textLabel.text = likedUser[@"profile"][@"firstName"];
     
-    //cell.imageView.iamge = place holder
+    cell.imageView.image = [UIImage imageNamed:@"ProfileImage1.jpg"];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     PFQuery *queryForPhoto = [[PFQuery alloc] initWithClassName:@"Photo"];
@@ -146,6 +146,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"Row selected.");
     [self performSegueWithIdentifier:@"matchesToChatSegue" sender:indexPath];
 }
 
