@@ -18,10 +18,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (strong, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ageLabel;
-@property (strong, nonatomic) IBOutlet UILabel *tagLineLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *tagLineLabel;
 @property (strong, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UIButton *dislikeButton;
+@property (strong, nonatomic) IBOutlet UIView *labelContainerView;
+@property (strong, nonatomic) IBOutlet UIView *buttonContainerView;
+
 
 @property (strong, nonatomic) NSArray *photos;
 @property (strong, nonatomic) PFObject *photo;
@@ -51,6 +54,8 @@
     // Do any additional setup after loading the view.
     
     // [MUPTestUser saveTestUserToParse];
+    
+    [self setupViews];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,7 +63,7 @@
     self.photoImageView.image = nil;
     self.firstNameLabel.text = nil;
     self.ageLabel.text = nil;
-    self.tagLineLabel.text = nil;
+//    self.tagLineLabel.text = nil;
     
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
@@ -83,6 +88,25 @@
             NSLog(@"%@", error);
         }
     }];
+}
+
+- (void)setupViews
+{
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
+    
+    [self addShadowForView:self.buttonContainerView];
+    [self addShadowForView:self.labelContainerView];
+    self.photoImageView.layer.masksToBounds = YES;
+//    [self addShadowForView:self.photoImageView];
+}
+
+- (void)addShadowForView:(UIView *)view
+{
+    view.layer.masksToBounds = NO;
+    view.layer.cornerRadius = 4;
+    view.layer.shadowOffset = CGSizeMake(0, 1);
+    view.layer.shadowRadius = 1;
+    view.layer.shadowOpacity = 0.25;
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,7 +218,7 @@
 {
     self.firstNameLabel.text = self.photo[kMUPPhotoUserKey][kMUPUserProfileKey][kMUPUserProfileFirstNameKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[kMUPPhotoUserKey][kMUPUserProfileKey][kMUPUserProfileAgeKey]];
-    self.tagLineLabel.text = self.photo[kMUPPhotoUserKey][kMUPUserTagLineKey];
+//    self.tagLineLabel.text = self.photo[kMUPPhotoUserKey][kMUPUserTagLineKey];
 }
 
 - (void)setupNextPhoto
