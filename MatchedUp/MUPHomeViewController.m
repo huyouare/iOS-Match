@@ -51,6 +51,14 @@
     // Do any additional setup after loading the view.
     
     // [MUPTestUser saveTestUserToParse];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.photoImageView.image = nil;
+    self.firstNameLabel.text = nil;
+    self.ageLabel.text = nil;
+    self.tagLineLabel.text = nil;
     
     self.likeButton.enabled = NO;
     self.dislikeButton.enabled = NO;
@@ -65,13 +73,16 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.photos = objects;
-            [self queryForCurrentPhotoIndex];
-            [self updateView];
+            if ([self allowPhoto] == NO) {
+                NSLog(@"Photo not allowed.");
+                [self setupNextPhoto];
+            } else {
+                [self queryForCurrentPhotoIndex];
+            }
         } else {
             NSLog(@"%@", error);
         }
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -132,6 +143,7 @@
             if (!error) {
                 UIImage *image = [UIImage imageWithData:data];
                 self.photoImageView.image = image;
+                [self updateView];
             } else {
                 NSLog(@"%@", error);
             }
@@ -189,10 +201,42 @@
 {
     if (self.currentPhotoIndex+1 < [self.photos count]) {
         self.currentPhotoIndex++;
-        [self queryForCurrentPhotoIndex];
+        
+        if ([self allowPhoto] == NO) {
+            [self setupNextPhoto];
+        } else {
+            [self queryForCurrentPhotoIndex];
+        }
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No more users to view." message:@"Check back later for more people" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
+    }
+}
+
+- (BOOL)allowPhoto
+{
+    int maxAge = [[NSUserDefaults standardUserDefaults] integerForKey:kMUPAgeMaxKey];
+    BOOL men = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPMenEnabledKey];
+    BOOL women = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPWomenEnabledKey];
+    BOOL single = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPSingleEnabledKey];
+    
+    PFObject *photo = self.photos[self.currentPhotoIndex];
+    PFUser *user = photo[kMUPPhotoUserKey];
+    
+    int userAge = [user[kMUPUserProfileKey][kMUPUserProfileAgeKey] intValue];
+    NSString *gender = user[kMUPUserProfileKey][kMUPUserProfileGenderKey];
+    NSString *relationshipStatus = user[kMUPUserProfileKey][kMUPUserProfileRelationshipStatusKey];
+    
+    if (userAge > maxAge) {
+        return NO;
+    } else if (men == NO && [gender isEqualToString:@"male"]) {
+        return NO;
+    } else if (women == NO && [gender isEqualToString:@"female"]) {
+        return NO;
+    } else if (single == NO && ([relationshipStatus isEqualToString:@"single"] || relationshipStatus == nil)) {
+        return NO;
+    } else {
+        return YES;
     }
 }
 

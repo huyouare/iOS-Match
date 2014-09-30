@@ -45,8 +45,21 @@ NSString *const kMUPActivityTypeDislikeKey      = @"dislike";
 
 NSString *const kMUPMenEnabledKey               = @"men";
 NSString *const kMUPWomenEnabledKey             = @"women";
-NSString *const kMUPSingleEnabledKey           = @"single";
+NSString *const kMUPSingleEnabledKey            = @"single";
 NSString *const kMUPAgeMaxKey                   = @"ageMax";
 
+#pragma mark - ChatRoom
+
+NSString *const kMUPChatRoomClassKey            = @"ChatRoom";
+NSString *const kMUPChatRoomUser1Key            = @"user1";
+NSString *const kMUPChatRoomUser2Key            = @"user2";
+
+#pragma mark - Chat
+
+NSString *const kMUPChatClassKey                = @"Chat";
+NSString *const kMUPChatChatRoomKey             = @"chatRoom";
+NSString *const kMUPChatFromUserKey             = @"fromUser";
+NSString *const kMUPChatToUserKey               = @"toUser";
+NSString *const kMUPChatTextKey                 = @"text";
 
 @end

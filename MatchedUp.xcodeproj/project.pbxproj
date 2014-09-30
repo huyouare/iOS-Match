@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8375C02F19D9E62200FA9B1B /* defaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8375C02E19D9E62200FA9B1B /* defaultPrefs.plist */; };
 		8380A53F19D6841600E1FEDA /* MUPMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */; };
 		8380A54319D685A500E1FEDA /* MUPMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */; };
 		8380A54719D6878E00E1FEDA /* MUPChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A54619D6878D00E1FEDA /* MUPChatViewController.m */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		669FEF7F21E7402B9749E8A6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8375C02E19D9E62200FA9B1B /* defaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefs.plist; sourceTree = "<group>"; };
 		8380A53D19D6841600E1FEDA /* MUPMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPMatchViewController.h; sourceTree = "<group>"; };
 		8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPMatchViewController.m; sourceTree = "<group>"; };
 		8380A54119D685A500E1FEDA /* MUPMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPMatchesViewController.h; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		83DA258719CF6FE900E56A2E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8375C02E19D9E62200FA9B1B /* defaultPrefs.plist */,
 				83DA258819CF700400E56A2E /* MUPSettingsViewController.h */,
 				83DA258919CF700400E56A2E /* MUPSettingsViewController.m */,
 			);
@@ -362,6 +365,7 @@
 				83B70AB319D1FBFC0082BD7F /* ProfileImage1.jpg in Resources */,
 				83AA904A19C658FC007278D5 /* InfoPlist.strings in Resources */,
 				83AA905319C658FC007278D5 /* Main.storyboard in Resources */,
+				8375C02F19D9E62200FA9B1B /* defaultPrefs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

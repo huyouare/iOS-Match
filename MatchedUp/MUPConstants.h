@@ -48,4 +48,18 @@ extern NSString *const kMUPWomenEnabledKey;
 extern NSString *const kMUPSingleEnabledKey;
 extern NSString *const kMUPAgeMaxKey;
 
+#pragma mark - ChatRoom
+
+extern NSString *const kMUPChatRoomClassKey;
+extern NSString *const kMUPChatRoomUser1Key;
+extern NSString *const kMUPChatRoomUser2Key;
+
+#pragma mark - Chat
+
+extern NSString *const kMUPChatClassKey;
+extern NSString *const kMUPChatChatRoomKey;
+extern NSString *const kMUPChatFromUserKey;
+extern NSString *const kMUPChatToUserKey;
+extern NSString *const kMUPChatTextKey;
+
 @end
