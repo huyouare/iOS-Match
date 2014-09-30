@@ -215,7 +215,7 @@
 
 - (BOOL)allowPhoto
 {
-    int maxAge = [[NSUserDefaults standardUserDefaults] integerForKey:kMUPAgeMaxKey];
+    int maxAge = (int)[[NSUserDefaults standardUserDefaults] integerForKey:kMUPAgeMaxKey];
     BOOL men = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPMenEnabledKey];
     BOOL women = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPWomenEnabledKey];
     BOOL single = [[NSUserDefaults standardUserDefaults] boolForKey:kMUPSingleEnabledKey];
@@ -325,21 +325,21 @@
 - (void)createChatRoom
 {
     NSLog(@"Chat Room Created!");
-    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
-    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
-    [queryForChatRoom whereKey:@"user2" equalTo:self.photo[kMUPPhotoUserKey]];
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:kMUPChatRoomClassKey];
+    [queryForChatRoom whereKey:kMUPChatRoomUser1Key equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:kMUPChatRoomUser2Key equalTo:self.photo[kMUPPhotoUserKey]];
     
-    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
-    [queryForChatRoomInverse whereKey:@"user1" equalTo:self.photo[kMUPPhotoUserKey]];
-    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:kMUPChatRoomClassKey];
+    [queryForChatRoomInverse whereKey:kMUPChatRoomUser1Key equalTo:self.photo[kMUPPhotoUserKey]];
+    [queryForChatRoomInverse whereKey:kMUPChatRoomUser2Key equalTo:[PFUser currentUser]];
     
     PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
     
     [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
-            PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
-            [chatRoom setObject:[PFUser currentUser] forKey:@"user1"];
-            [chatRoom setObject:self.photo[kMUPPhotoUserKey] forKey:@"user2"];
+            PFObject *chatRoom = [PFObject objectWithClassName:kMUPChatRoomClassKey];
+            [chatRoom setObject:[PFUser currentUser] forKey:kMUPChatRoomUser1Key];
+            [chatRoom setObject:self.photo[kMUPPhotoUserKey] forKey:kMUPChatRoomUser2Key];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"Segue to Match");
                 [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
