@@ -8,7 +8,7 @@
 
 #import "MUPEditProfileViewController.h"
 
-@interface MUPEditProfileViewController ()
+@interface MUPEditProfileViewController () <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *tagLineTextView;
 @property (strong, nonatomic) IBOutlet UIImageView *profilePictureImageView;
@@ -31,6 +31,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.tagLineTextView.delegate = self;
+    
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
     
     PFQuery *query = [PFQuery queryWithClassName:kMUPPhotoClassKey];
     [query whereKey:kMUPPhotoUserKey equalTo:[PFUser currentUser]];
@@ -64,15 +68,21 @@
 }
 */
 
-#pragma mark - IBActions
+#pragma mark - TextViewDelegate
 
-- (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMUPUserTagLineKey];
-    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"Tag Line Saved.");
-    }];
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([text isEqualToString:@"\n"]) {
+        NSLog(@"Return entered.");
+        [self.tagLineTextView resignFirstResponder];
+        [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kMUPUserTagLineKey];
+        [[PFUser currentUser] saveInBackground];
+        [self.navigationController popViewControllerAnimated:YES];
+        return NO;
+    }
+    else {
+        return YES;
+    }
 }
 
 
