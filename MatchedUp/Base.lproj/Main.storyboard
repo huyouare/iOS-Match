@@ -10,8 +10,8 @@
             <objects>
                 <viewController id="ORf-CP-d4t" customClass="MUPLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mxn-pa-B8M"/>
-                        <viewControllerLayoutGuide type="bottom" id="YXB-i1-Lhn"/>
+                        <viewControllerLayoutGuide type="top" id="1zQ-2u-fDd"/>
+                        <viewControllerLayoutGuide type="bottom" id="p0E-Js-MDp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vhs-hS-kyT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -53,8 +53,8 @@
             <objects>
                 <viewController id="aPw-32-3vf" customClass="MUPHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Jf-HL-nS5"/>
-                        <viewControllerLayoutGuide type="bottom" id="v4p-H5-bBu"/>
+                        <viewControllerLayoutGuide type="top" id="h6g-DU-Ysa"/>
+                        <viewControllerLayoutGuide type="bottom" id="hA5-Jr-X71"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8q1-qo-Kcj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -160,8 +160,8 @@
             <objects>
                 <viewController id="8iC-CP-2KX" customClass="MUPMatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fnQ-xp-0K3"/>
-                        <viewControllerLayoutGuide type="bottom" id="UeL-Jy-uaQ"/>
+                        <viewControllerLayoutGuide type="top" id="QDy-th-uqC"/>
+                        <viewControllerLayoutGuide type="bottom" id="KY2-pA-32s"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dQg-mC-uh6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -216,8 +216,8 @@
             <objects>
                 <viewController id="Dbv-ac-nrI" customClass="MUPSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gdv-GQ-j63"/>
-                        <viewControllerLayoutGuide type="bottom" id="IYK-qy-QnK"/>
+                        <viewControllerLayoutGuide type="top" id="vhc-pJ-jYQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="x4a-k0-2HA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IpI-bI-poK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -310,48 +310,78 @@
             <objects>
                 <viewController id="ehP-7i-Em0" customClass="MUPProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JvV-04-b8I"/>
-                        <viewControllerLayoutGuide type="bottom" id="3Mu-rS-SRM"/>
+                        <viewControllerLayoutGuide type="top" id="CoJ-KI-NcE"/>
+                        <viewControllerLayoutGuide type="bottom" id="KPr-Ae-gpI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bWG-zq-DhB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="di3-IR-fyJ">
-                                <rect key="frame" x="20" y="82" width="180" height="180"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ren-os-EZE">
-                                <rect key="frame" x="20" y="286" width="67" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New York, New York" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQv-GJ-bba">
-                                <rect key="frame" x="113" y="286" width="187" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFa-5f-oyh">
-                                <rect key="frame" x="20" y="315" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="178" y="293" width="131" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="26" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-JI-LOM">
-                                <rect key="frame" x="113" y="315" width="20" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R22-uC-bzZ">
-                                <rect key="frame" x="20" y="344" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="43" y="295" width="16" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Single" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-vU-b2k">
-                                <rect key="frame" x="113" y="344" width="187" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="94" y="294" width="40" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-Ok-WaK">
-                                <rect key="frame" x="20" y="373" width="280" height="135"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="di3-IR-fyJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="221"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="60K-jH-TCJ">
+                                <rect key="frame" x="151" y="294" width="19" height="19"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AgeIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="TQh-E7-JJp">
+                                <rect key="frame" x="16" y="294" width="19" height="19"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qza-4T-d9g">
+                                <rect key="frame" x="67" y="294" width="19" height="19"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" About Me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT6-iD-DOw">
+                                <rect key="frame" x="0.0" y="318" width="320" height="22"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="msh-ki-orh">
+                                <rect key="frame" x="0.0" y="471" width="320" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgy-Ro-EL5">
+                                        <rect key="frame" x="24" y="20" width="55" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="LikeIcon.png">
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="likeButtonPressed:" destination="aPw-32-3vf" eventType="touchUpInside" id="6PF-g3-ufx"/>
+                                            <action selector="likeButtonPressed:" destination="ehP-7i-Em0" eventType="touchUpInside" id="NzK-Pc-pa9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lR-Kj-yVL">
+                                        <rect key="frame" x="250" y="20" width="38" height="37"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="DislikeIcon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="dislikeButtonPressed:" destination="aPw-32-3vf" eventType="touchUpInside" id="0Vo-P7-4FT"/>
+                                            <action selector="dislikeButtonPressed:" destination="ehP-7i-Em0" eventType="touchUpInside" id="Qyd-GR-ODY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFf-Ok-WaK">
+                                <rect key="frame" x="0.0" y="348" width="320" height="115"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -376,8 +406,8 @@
             <objects>
                 <viewController id="nDd-43-qNN" customClass="MUPMatchesViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FHj-5T-aQe"/>
-                        <viewControllerLayoutGuide type="bottom" id="ToQ-T2-YUy"/>
+                        <viewControllerLayoutGuide type="top" id="YFt-VY-als"/>
+                        <viewControllerLayoutGuide type="bottom" id="tjJ-VG-OiO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dLf-PU-X7k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -431,8 +461,8 @@
             <objects>
                 <viewController id="J75-Jx-nxJ" customClass="MUPChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ihr-FZ-Hjh"/>
-                        <viewControllerLayoutGuide type="bottom" id="hvY-xN-pt5"/>
+                        <viewControllerLayoutGuide type="top" id="aTH-ld-F8a"/>
+                        <viewControllerLayoutGuide type="bottom" id="v7R-HU-nOG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LMg-0n-maL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -450,8 +480,8 @@
             <objects>
                 <viewController id="JnJ-Ax-hvq" customClass="MUPEditProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OQ7-QK-nM2"/>
-                        <viewControllerLayoutGuide type="bottom" id="z33-NW-Ovm"/>
+                        <viewControllerLayoutGuide type="top" id="I5o-bv-tYN"/>
+                        <viewControllerLayoutGuide type="bottom" id="6V9-0y-pUi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L04-DL-eBr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -511,6 +541,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AgeIcon.png" width="19" height="19"/>
         <image name="ChatIcon.png" width="22" height="22"/>
         <image name="DislikeIcon.png" width="38" height="37"/>
         <image name="Facebook.png" width="200" height="25"/>
@@ -518,7 +549,9 @@
         <image name="LikeIcon.png" width="55" height="37"/>
         <image name="Logo.png" width="134" height="94"/>
         <image name="SettingIcon.png" width="22" height="20"/>
+        <image name="StatusIcon.png" width="19" height="18"/>
         <image name="UserImage.png" width="320" height="221"/>
+        <image name="location.png" width="8" height="10"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

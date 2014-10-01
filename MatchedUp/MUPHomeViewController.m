@@ -11,7 +11,7 @@
 #import "MUPProfileViewController.h"
 #import "MUPMatchViewController.h"
 
-@interface MUPHomeViewController () <MUPMatchViewControllerDelegate>
+@interface MUPHomeViewController () <MUPMatchViewControllerDelegate, MUPProfileViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -123,6 +123,7 @@
     if ([segue.identifier isEqualToString:@"homeToProfileSegue"]) {
         MUPProfileViewController *profileVC = segue.destinationViewController;
         profileVC.photo = self.photo;
+        profileVC.delegate = self;
     } else if ([segue.identifier isEqualToString:@"homeToMatchSegue"]) {
         MUPMatchViewController *matchVC = segue.destinationViewController;
         matchVC.matchedUserImage = self.photoImageView.image;
@@ -382,6 +383,20 @@
     [self dismissViewControllerAnimated:NO completion:^{
         [self performSegueWithIdentifier:@"homeToMatchesSegue" sender:nil];
     }];
+}
+
+#pragma mark - MUPProfileViewControllerDelegate
+
+- (void)didPressLike
+{
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkLike];
+}
+
+- (void)didPressDislike
+{
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkDislike];
 }
 
 @end
