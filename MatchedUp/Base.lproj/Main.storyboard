@@ -147,7 +147,7 @@
                         <outlet property="settingsBarButtonItem" destination="8fi-Oc-HgL" id="CcS-Ry-i5Z"/>
                         <segue destination="ehP-7i-Em0" kind="push" identifier="homeToProfileSegue" id="1UF-eG-kd5"/>
                         <segue destination="nDd-43-qNN" kind="push" identifier="homeToMatchesSegue" id="VA8-iZ-k1W"/>
-                        <segue destination="8iC-CP-2KX" kind="modal" identifier="homeToMatchSegue" id="sPD-Yd-pK9"/>
+                        <segue destination="8iC-CP-2KX" kind="custom" identifier="homeToMatchSegue" id="sPD-Yd-pK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ON-Uw-STP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,7 +157,7 @@
         <!--Match View Controller-->
         <scene sceneID="BzP-JR-E1P">
             <objects>
-                <viewController id="8iC-CP-2KX" customClass="MUPMatchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="matchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8iC-CP-2KX" customClass="MUPMatchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QDy-th-uqC"/>
                         <viewControllerLayoutGuide type="bottom" id="KY2-pA-32s"/>
@@ -166,35 +166,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNs-ql-WXg">
-                                <rect key="frame" x="20" y="44" width="130" height="130"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-Kw-rH9">
-                                <rect key="frame" x="170" y="44" width="130" height="130"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's a Match!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlV-kI-iFP">
-                                <rect key="frame" x="113" y="221" width="95" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCx-hf-jrW">
-                                <rect key="frame" x="20" y="302" width="77" height="30"/>
-                                <state key="normal" title="View Chats">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewChatsButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="szi-76-0ei"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D29-qq-WVy">
-                                <rect key="frame" x="191" y="302" width="109" height="30"/>
-                                <state key="normal" title="Keep Searching">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="keepSearchingButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="rcs-pS-yeW"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DQ9-FD-cEr">
+                                <rect key="frame" x="16" y="110" width="288" height="201"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's a Match!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlV-kI-iFP">
+                                        <rect key="frame" x="97" y="168" width="95" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7H8-Kw-rH9">
+                                        <rect key="frame" x="154" y="39" width="110" height="110"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCx-hf-jrW">
+                                        <rect key="frame" x="206" y="157" width="40" height="44"/>
+                                        <state key="normal" image="ChatNow_Icon.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="viewChatsButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="szi-76-0ei"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D29-qq-WVy">
+                                        <rect key="frame" x="262" y="0.0" width="18" height="22"/>
+                                        <state key="normal" image="Close-Button.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keepSearchingButtonPressed:" destination="8iC-CP-2KX" eventType="touchUpInside" id="rcs-pS-yeW"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNs-ql-WXg">
+                                        <rect key="frame" x="24" y="39" width="110" height="110"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -538,7 +544,9 @@
     <resources>
         <image name="AgeIcon.png" width="19" height="19"/>
         <image name="ChatIcon.png" width="22" height="22"/>
+        <image name="ChatNow_Icon.png" width="22" height="22"/>
         <image name="Chat_user.png" width="58" height="55"/>
+        <image name="Close-Button.png" width="18" height="18"/>
         <image name="DislikeIcon.png" width="38" height="37"/>
         <image name="EditProfile.png" width="253" height="32"/>
         <image name="Facebook.png" width="200" height="25"/>

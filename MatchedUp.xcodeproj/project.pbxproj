@@ -155,6 +155,7 @@
 		8310E19A19DA5DF50024C995 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 8310E10619DA5DF50024C995 /* iTunesArtwork.png */; };
 		8310E19B19DA5DF50024C995 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8310E10719DA5DF50024C995 /* iTunesArtwork@2x.png */; };
 		8310E19C19DA5DF50024C995 /* Matched_Up_DesignV3_red.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8310E10819DA5DF50024C995 /* Matched_Up_DesignV3_red.pdf */; };
+		8335D85019DC4A6D00B662B5 /* MUPTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8335D84F19DC4A6D00B662B5 /* MUPTransitionAnimator.m */; };
 		8375C02F19D9E62200FA9B1B /* defaultPrefs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8375C02E19D9E62200FA9B1B /* defaultPrefs.plist */; };
 		8380A53F19D6841600E1FEDA /* MUPMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */; };
 		8380A54319D685A500E1FEDA /* MUPMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */; };
@@ -343,6 +344,8 @@
 		8310E10619DA5DF50024C995 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		8310E10719DA5DF50024C995 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		8310E10819DA5DF50024C995 /* Matched_Up_DesignV3_red.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Matched_Up_DesignV3_red.pdf; sourceTree = "<group>"; };
+		8335D84E19DC4A6D00B662B5 /* MUPTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPTransitionAnimator.h; sourceTree = "<group>"; };
+		8335D84F19DC4A6D00B662B5 /* MUPTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPTransitionAnimator.m; sourceTree = "<group>"; };
 		8375C02E19D9E62200FA9B1B /* defaultPrefs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefs.plist; sourceTree = "<group>"; };
 		8380A53D19D6841600E1FEDA /* MUPMatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUPMatchViewController.h; sourceTree = "<group>"; };
 		8380A53E19D6841600E1FEDA /* MUPMatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPMatchViewController.m; sourceTree = "<group>"; };
@@ -685,6 +688,15 @@
 			path = ios7;
 			sourceTree = "<group>";
 		};
+		8335D84D19DC4A4900B662B5 /* Transition Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8335D84E19DC4A6D00B662B5 /* MUPTransitionAnimator.h */,
+				8335D84F19DC4A6D00B662B5 /* MUPTransitionAnimator.m */,
+			);
+			name = "Transition Helper";
+			sourceTree = "<group>";
+		};
 		8380A53C19D683EC00E1FEDA /* Match */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +709,7 @@
 		8380A54019D6859200E1FEDA /* Matches */ = {
 			isa = PBXGroup;
 			children = (
+				8335D84D19DC4A4900B662B5 /* Transition Helper */,
 				8380A54119D685A500E1FEDA /* MUPMatchesViewController.h */,
 				8380A54219D685A500E1FEDA /* MUPMatchesViewController.m */,
 			);
@@ -1141,6 +1154,7 @@
 				83DA258F19CF728700E56A2E /* MUPEditProfileViewController.m in Sources */,
 				83AA904C19C658FC007278D5 /* main.m in Sources */,
 				83DA258119CE50DB00E56A2E /* MUPConstants.m in Sources */,
+				8335D85019DC4A6D00B662B5 /* MUPTransitionAnimator.m in Sources */,
 				83DA259719CF963600E56A2E /* MUPTestUser.m in Sources */,
 				8380A53F19D6841600E1FEDA /* MUPMatchViewController.m in Sources */,
 				83AA905019C658FC007278D5 /* MUPAppDelegate.m in Sources */,

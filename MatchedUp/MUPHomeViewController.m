@@ -10,8 +10,9 @@
 #import "MUPTestUser.h"
 #import "MUPProfileViewController.h"
 #import "MUPMatchViewController.h"
+#import "MUPTransitionAnimator.h"
 
-@interface MUPHomeViewController () <MUPMatchViewControllerDelegate, MUPProfileViewControllerDelegate>
+@interface MUPHomeViewController () <MUPMatchViewControllerDelegate, MUPProfileViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *chatBarButtonItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
@@ -124,10 +125,6 @@
         MUPProfileViewController *profileVC = segue.destinationViewController;
         profileVC.photo = self.photo;
         profileVC.delegate = self;
-    } else if ([segue.identifier isEqualToString:@"homeToMatchSegue"]) {
-        MUPMatchViewController *matchVC = segue.destinationViewController;
-        matchVC.matchedUserImage = self.photoImageView.image;
-        matchVC.delegate = self;
     }
 }
 
@@ -367,7 +364,14 @@
             [chatRoom setObject:self.photo[kMUPPhotoUserKey] forKey:kMUPChatRoomUser2Key];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 NSLog(@"Segue to Match");
-                [self performSegueWithIdentifier:@"homeToMatchSegue" sender:nil];
+                UIStoryboard *myStoryboard = self.storyboard;
+                MUPMatchViewController *matchViewController = [myStoryboard instantiateViewControllerWithIdentifier:@"matchVC"];
+                matchViewController.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:.75];
+                matchViewController.transitioningDelegate = self;
+                matchViewController.matchedUserImage = self.photoImageView.image;
+                matchViewController.delegate = self;
+                matchViewController.modalPresentationStyle = UIModalPresentationCustom;
+                [self presentViewController:matchViewController animated:YES completion:nil];
             }];
         } else {
             NSLog(@"Chat failed.");
@@ -397,6 +401,21 @@
 {
     [self.navigationController popViewControllerAnimated:NO];
     [self checkDislike];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    MUPTransitionAnimator *animator = [[MUPTransitionAnimator alloc] init];
+    animator.presenting = YES;
+    return animator;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    MUPTransitionAnimator *animator = [[MUPTransitionAnimator alloc] init];
+    return animator;
 }
 
 @end
